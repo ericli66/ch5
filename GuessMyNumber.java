@@ -19,15 +19,39 @@ public class GuessMyNumber{
 		//read the guess number
 		int guessNumber = in.nextInt();
 		
-		//compare guess
+		//first guess
 		if(number == guessNumber) {
 			System.out.println("You got it!");
-		} else if (number > guessNumber) {
-			System.out.println("Bigger!");
-			guessNumber = in.nextInt();
 		} else {
-			System.out.println("Smaller!");
-			guessNumber = in.nextInt();
-		} 
-	}
+			
+			if (number > guessNumber) {
+				System.out.println("Bigger!");
+			} else {
+				System.out.println("Smaller!");
+			} 
+			
+			//second guess
+			guessNumber = in.nextInt();	
+			
+			if(number == guessNumber) {
+				System.out.println("You got it!");
+			} else {
+			
+				if (number > guessNumber) {
+					System.out.println("Bigger!");
+				} else {
+					System.out.println("Smaller!");
+				} 
+				
+				//last guess
+				guessNumber = in.nextInt();	
+			
+				if(number == guessNumber) {
+					System.out.println("You got it!");
+				} else {
+					System.out.println("You are out of guesses!");
+				} 
+			}
+		}
+	}			
 }
